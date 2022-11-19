@@ -5,9 +5,8 @@ import { HeaderWrapper } from './AppBar.styled';
 export default function AppBar() {
   return (
     <>
-      <HeaderWrapper>
-        <Navigation />
-      </HeaderWrapper>
+      <Navigation />
+
       <div>
         <Suspense fallback={null}>
           <Outlet />

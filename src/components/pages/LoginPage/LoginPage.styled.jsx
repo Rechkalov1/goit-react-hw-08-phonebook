@@ -3,10 +3,18 @@ import styled from 'styled-components';
 export const Forms = styled.form`
   padding: 16px;
   display: flex;
-  align-items: flex-end;
+
   justify-content: flex-end;
   flex-direction: column;
   font-size: 24px;
+
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
 `;
 export const Input = styled.input`
   padding: 8px;
@@ -17,6 +25,13 @@ export const Input = styled.input`
 `;
 export const Label = styled.label`
   color: #777;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-box-align: center;
+  width: 288px;
+  margin-bottom: 16px;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Button = styled.button`

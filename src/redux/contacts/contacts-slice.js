@@ -5,14 +5,14 @@ import {
   addContacts,
   removeContacts,
 } from './contactsOperations';
-const initialState = {
+const contactsInitialState = {
   items: [],
   isLoading: false,
   error: null,
 };
 const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: initialState,
+  initialState: contactsInitialState,
   extraReducers: {
     [fetchContacts.pending]: (state, _) => {
       state.isLoading = true;

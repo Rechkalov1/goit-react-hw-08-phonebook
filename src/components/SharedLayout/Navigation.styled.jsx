@@ -1,16 +1,12 @@
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
-export const Ul = styled.ul`
+export const Div = styled.div`
+  flex-direction: row-revers;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
 `;
-export const Li = styled.li`
-  margin-right: 20px;
-  list-style-type: none;
-`;
-
 export const NavItem = styled(NavLink)`
-  display: flex;
   align-items: center;
   padding: 7px 17px;
   font-size: 1rem;
@@ -25,4 +21,10 @@ export const NavItem = styled(NavLink)`
   :focus-visible:not(.active) {
     color: #d9514eff;
   }
+`;
+
+export const HeaderWrapper = styled.header`
+  margin-bottom: 40px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 `;

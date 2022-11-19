@@ -1,11 +1,18 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
+import { NavItem } from './Navigation.styled';
+import { Nav, DivMenu } from './AppBar.styled';
 
 export default function AuthNav() {
   return (
-    <nav>
-      <NavLink to="/login">Login</NavLink>
-      <NavLink to="/register">Register</NavLink>
-    </nav>
+    <Nav>
+      <div>
+        <NavItem to="/">Home</NavItem>
+      </div>
+      <DivMenu>
+        <NavItem to="/login">Login</NavItem>
+        <NavItem to="/register">Register</NavItem>
+      </DivMenu>
+    </Nav>
   );
 }

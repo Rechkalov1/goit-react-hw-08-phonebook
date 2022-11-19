@@ -62,7 +62,7 @@ export function LoginPage() {
         />
       </Label>
 
-      <Button>Add Contact</Button>
+      <Button>Login</Button>
     </Forms>
   );
 }

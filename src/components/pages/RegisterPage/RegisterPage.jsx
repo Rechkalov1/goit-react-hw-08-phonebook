@@ -92,7 +92,7 @@ export function RegisterPage() {
         />
       </Label>
 
-      <Button>Add Contact</Button>
+      <Button>Register</Button>
     </Forms>
   );
 }
