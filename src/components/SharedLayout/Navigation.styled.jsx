@@ -1,4 +1,4 @@
-import { Navigate, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const Div = styled.div`
   flex-direction: row-revers;
