@@ -10,10 +10,10 @@ export function ContactList() {
     dispatch(contactsOperations.fetchContacts());
   }, [dispatch]);
 
-  const elements = items.map(({ name, phone, id }) => {
+  const elements = items.map(({ name, number, id }) => {
     return (
       <Li key={id}>
-        {name}:{phone}
+        {name}:{number}
         <Button onClick={() => dispatch(contactsOperations.removeContacts(id))}>
           Delete
         </Button>
