@@ -8,12 +8,19 @@ import { PageNotFound } from './pages/PageNotFound/PageNotFound';
 import { ContactsApp } from './pages/Contacts/ContactsApp';
 import PublicRoute from './SharedLayout/PublicRoute';
 import PrivateRoute from './SharedLayout/PrivateRoute';
+import { useDispatch } from 'react-redux';
+import { authCurrentUser } from 'redux/auth/authOperation';
+import { useEffect } from 'react';
 // const Home = lazy(() => import('./pages/Home/Home'));
 // const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 // const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 // const PageNotFound = lazy(() => import('./pages/PageNotFound/PageNotFound'));
 
 export const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(authCurrentUser());
+  }, [dispatch]);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
