@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { Forms, Input, Label, Button } from './Form.styled';
-
-import { useDispatch } from 'react-redux';
+import getFilterContacts from '../../redux/contacts/selectorC';
+import { useDispatch, useSelector } from 'react-redux';
 
 import * as contactsOperations from 'redux/contacts/contactsOperations';
 
 export function Form() {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-
+  const [number, setNumber] = useState('');
+  const contacts = useSelector(getFilterContacts);
   const dispatch = useDispatch();
   const nameId = nanoid();
   const phoneId = nanoid();
@@ -20,8 +20,8 @@ export function Form() {
       case 'name':
         setName(value);
         break;
-      case 'phone':
-        setPhone(value);
+      case 'number':
+        setNumber(value);
         break;
       default:
         return;
@@ -31,12 +31,15 @@ export function Form() {
     e.preventDefault();
     const contact = {
       name,
-      phone: phone,
+      number: number,
     };
-
+    if (contacts.some(contact => contact.name === name)) {
+      alert(`${name} is already in contacts`);
+      return;
+    }
     dispatch(contactsOperations.addContacts(contact));
     setName('');
-    setPhone('');
+    setNumber('');
   };
   return (
     <Forms onSubmit={handleSubmit}>
@@ -62,8 +65,8 @@ export function Form() {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           type="tel"
-          name="phone"
-          value={phone}
+          name="number"
+          value={number}
           onChange={handleChange}
         />
       </Label>

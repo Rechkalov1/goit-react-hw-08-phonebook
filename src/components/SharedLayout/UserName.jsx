@@ -9,7 +9,7 @@ export default function UserName() {
   const dispatch = useDispatch();
   return (
     <DivMenu>
-      <p>{nameUser.email}</p>
+      <p>{nameUser.name}</p>
       <ButtonLogOut
         type="button"
         onClick={() => dispatch(authOperation.logOut())}
