@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import { Forms, Input, Label, Button } from './LoginPage.styled';
 import * as authOpetation from 'redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 export function LoginPage() {
   const [email, setEmail] = useState('');
@@ -63,6 +64,7 @@ export function LoginPage() {
       </Label>
 
       <Button>Login</Button>
+      <ToastContainer />
     </Forms>
   );
 }

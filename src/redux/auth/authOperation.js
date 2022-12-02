@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { noLogin, noRegistration } from 'components/Notification/Notification';
 import axios from 'axios';
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 const token = {
@@ -17,6 +18,7 @@ export const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
+      noRegistration();
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -29,6 +31,8 @@ export const logIn = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
+      noLogin();
+
       return thunkAPI.rejectWithValue(error.message);
     }
   }

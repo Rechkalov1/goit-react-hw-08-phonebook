@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import { Forms, Input, Label, Button } from './RegisterPage.styled';
 import * as authOperation from '../../../redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 // import getFilterContacts from 'redux/contacts/selectorC';
 
@@ -93,6 +94,7 @@ export function RegisterPage() {
       </Label>
 
       <Button>Register</Button>
+      <ToastContainer />
     </Forms>
   );
 }
